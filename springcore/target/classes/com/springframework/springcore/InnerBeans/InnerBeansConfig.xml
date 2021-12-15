@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	<!--RefType as Property Injection By Default Sigelton Scope-->
+	<bean name="employee" class="com.springframework.springcore.InnerBeans.Employee" p:employeeId="41198" p:employeeName="Raja Zia UL Hassan">
+		<property name="address">
+			<bean name="address" class="com.springframework.springcore.InnerBeans.Address" p:houseNumber="02" p:street="01" p:city="Islamabad" />
+		</property>
+	</bean>
+	<!--RefType as Property By using Prototype Scope-->
+	<bean name="employeePrototype" class="com.springframework.springcore.InnerBeans.Employee" p:employeeId="41198" p:employeeName="Raja Zia UL Hassan" scope="prototype">
+		<property name="address">
+			<bean name="address" class="com.springframework.springcore.InnerBeans.Address" p:houseNumber="02" p:street="01" p:city="Islamabad" />
+		</property>
+	</bean>
+	
+</beans>

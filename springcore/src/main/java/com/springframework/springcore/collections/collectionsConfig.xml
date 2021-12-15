@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+<!--List-->
+    <bean name = "hospital" class = "com.springframework.springcore.collections.Hospital" >
+    	<property name="hospitalName">
+    		<value>Shifa International hospital Islamabad,</value>
+    	</property>
+    	<property name="departments">
+    		<list>
+    			<value>Gastrology</value>
+    			<value>Urology</value>
+    			<value>Radiology</value>
+    			<value>Cardiology</value>
+    			<value>Ped's</value>
+    			<value>Gynicology</value>
+    		</list>
+    	</property>
+    	<property name="branches">
+    		<list>
+    			<value>Lahore</value>
+    			<value>Karachi</value>
+    			<value>Peshawer</value>
+    			<value>Quetta</value>
+    			<value>Gilgit Baldistan</value>
+    			<value>Muzafferabad</value>
+    		</list>
+    	</property>
+    	<property name="patient">
+    		<map>
+    			<entry key = "100" value = "Jameel"/>
+    			<entry key = "101" value = "Shakeel"/>
+    			<entry key = "102" value = "Saeed"/>
+    			<entry key = "103" value = "Nazeer"/>
+    			<entry key = "104" value = "Fareed"/>
+    		</map>
+    	</property>
+    	<property name="doctorNameAndNationality">
+    		<props>
+    			<prop key="USA">Donald Trump</prop>
+    			<prop key="AUS">McRawth</prop>
+    			<prop key="NZ">Hobbit</prop>
+    			<prop key="PK">Mirza Latif</prop>
+    			<prop key="UK">Charle's</prop>
+    		</props>
+    	</property>
+    </bean>
+<!--Set-->
+    
+<!--Map-->
+
+        
+</beans>

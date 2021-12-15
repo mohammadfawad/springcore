@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+<!--Scores Dependancy using P-Schema-->
+    <bean name="scores" class=" com.springframework.springcore.RefType.Scores" p:math = "75" p:Physics = "80" p:Chymistery = "70" />
+        
+<!--Student Dependent-->
+    <bean name="Student" class="com.springframework.springcore.RefType.Student">
+        <property name="studentName" value="MohammadFawadBhatti"/>   
+        <property name="scores"><ref bean="scores"/> </property>
+    </bean>
+<!--Student P:Schema-->
+    <bean name="Student2" class="com.springframework.springcore.RefType.Student" p:studentName = "Ali Javaid" p:scores-ref = "scores"/>      
+</beans>

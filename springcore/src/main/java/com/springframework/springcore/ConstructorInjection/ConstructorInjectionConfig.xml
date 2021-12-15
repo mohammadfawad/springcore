@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+<!--Constructor Injection And property Injection C-Schema-->
+<bean name = "address" class  = "com.springframework.springcore.ConstructorInjection.Address">
+	<constructor-arg index = "" value = "987"/>
+	<constructor-arg index = "" value = "110-A"/>
+	<constructor-arg index = "" value = "London, UK."/>
+</bean>
+<bean name = "employee" class = "com.springframework.springcore.ConstructorInjection.Employee">
+	<constructor-arg index = "0" value = "00798"/>
+	<constructor-arg index = "1" value = "Rana Tanveer Anwar"/>
+	<constructor-arg index = "2" ref = "address"/>
+		
+</bean>
+<bean name = "address2" class  = "com.springframework.springcore.ConstructorInjection.Address" c:houseNumber = "987" c:street = "110-A" c:city = "London, UK."/>
+<bean name = "employee2" class = "com.springframework.springcore.ConstructorInjection.Employee" c:employeeId = "00999" c:employeeName = "Raja Parvaiz Kayani" c:address-ref = "address2"/>
+</beans>
